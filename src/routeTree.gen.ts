@@ -11,9 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as IntegritetspolicyRouteImport } from './routes/integritetspolicy'
 import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as KopvillkorRouteImport } from './routes/kopvillkor'
 import { Route as OmOssRouteImport } from './routes/om-oss'
 import { Route as RestaureringRouteImport } from './routes/restaurering'
+import { Route as ReturpolicyRouteImport } from './routes/returpolicy'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SkickaInSkorRouteImport } from './routes/skicka-in-skor'
 import { Route as VarukorgRouteImport } from './routes/varukorg'
@@ -30,9 +34,24 @@ const CheckoutRoute = CheckoutRouteImport.update({
   path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IntegritetspolicyRoute = IntegritetspolicyRouteImport.update({
+  id: '/integritetspolicy',
+  path: '/integritetspolicy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KopvillkorRoute = KopvillkorRouteImport.update({
+  id: '/kopvillkor',
+  path: '/kopvillkor',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OmOssRoute = OmOssRouteImport.update({
@@ -43,6 +62,11 @@ const OmOssRoute = OmOssRouteImport.update({
 const RestaureringRoute = RestaureringRouteImport.update({
   id: '/restaurering',
   path: '/restaurering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReturpolicyRoute = ReturpolicyRouteImport.update({
+  id: '/returpolicy',
+  path: '/returpolicy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShopRoute = ShopRouteImport.update({
@@ -74,9 +98,13 @@ const ProduktIdRoute = ProduktIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/faq': typeof FaqRoute
+  '/integritetspolicy': typeof IntegritetspolicyRoute
   '/kontakt': typeof KontaktRoute
+  '/kopvillkor': typeof KopvillkorRoute
   '/om-oss': typeof OmOssRoute
   '/restaurering': typeof RestaureringRoute
+  '/returpolicy': typeof ReturpolicyRoute
   '/shop': typeof ShopRoute
   '/skicka-in-skor': typeof SkickaInSkorRoute
   '/varukorg': typeof VarukorgRoute
@@ -86,9 +114,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/faq': typeof FaqRoute
+  '/integritetspolicy': typeof IntegritetspolicyRoute
   '/kontakt': typeof KontaktRoute
+  '/kopvillkor': typeof KopvillkorRoute
   '/om-oss': typeof OmOssRoute
   '/restaurering': typeof RestaureringRoute
+  '/returpolicy': typeof ReturpolicyRoute
   '/shop': typeof ShopRoute
   '/skicka-in-skor': typeof SkickaInSkorRoute
   '/varukorg': typeof VarukorgRoute
@@ -99,9 +131,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/faq': typeof FaqRoute
+  '/integritetspolicy': typeof IntegritetspolicyRoute
   '/kontakt': typeof KontaktRoute
+  '/kopvillkor': typeof KopvillkorRoute
   '/om-oss': typeof OmOssRoute
   '/restaurering': typeof RestaureringRoute
+  '/returpolicy': typeof ReturpolicyRoute
   '/shop': typeof ShopRoute
   '/skicka-in-skor': typeof SkickaInSkorRoute
   '/varukorg': typeof VarukorgRoute
@@ -113,9 +149,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/checkout'
+    | '/faq'
+    | '/integritetspolicy'
     | '/kontakt'
+    | '/kopvillkor'
     | '/om-oss'
     | '/restaurering'
+    | '/returpolicy'
     | '/shop'
     | '/skicka-in-skor'
     | '/varukorg'
@@ -125,9 +165,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/checkout'
+    | '/faq'
+    | '/integritetspolicy'
     | '/kontakt'
+    | '/kopvillkor'
     | '/om-oss'
     | '/restaurering'
+    | '/returpolicy'
     | '/shop'
     | '/skicka-in-skor'
     | '/varukorg'
@@ -137,9 +181,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/checkout'
+    | '/faq'
+    | '/integritetspolicy'
     | '/kontakt'
+    | '/kopvillkor'
     | '/om-oss'
     | '/restaurering'
+    | '/returpolicy'
     | '/shop'
     | '/skicka-in-skor'
     | '/varukorg'
@@ -150,9 +198,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CheckoutRoute: typeof CheckoutRoute
+  FaqRoute: typeof FaqRoute
+  IntegritetspolicyRoute: typeof IntegritetspolicyRoute
   KontaktRoute: typeof KontaktRoute
+  KopvillkorRoute: typeof KopvillkorRoute
   OmOssRoute: typeof OmOssRoute
   RestaureringRoute: typeof RestaureringRoute
+  ReturpolicyRoute: typeof ReturpolicyRoute
   ShopRoute: typeof ShopRoute
   SkickaInSkorRoute: typeof SkickaInSkorRoute
   VarukorgRoute: typeof VarukorgRoute
@@ -176,11 +228,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/integritetspolicy': {
+      id: '/integritetspolicy'
+      path: '/integritetspolicy'
+      fullPath: '/integritetspolicy'
+      preLoaderRoute: typeof IntegritetspolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kontakt': {
       id: '/kontakt'
       path: '/kontakt'
       fullPath: '/kontakt'
       preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kopvillkor': {
+      id: '/kopvillkor'
+      path: '/kopvillkor'
+      fullPath: '/kopvillkor'
+      preLoaderRoute: typeof KopvillkorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/om-oss': {
@@ -195,6 +268,13 @@ declare module '@tanstack/react-router' {
       path: '/restaurering'
       fullPath: '/restaurering'
       preLoaderRoute: typeof RestaureringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/returpolicy': {
+      id: '/returpolicy'
+      path: '/returpolicy'
+      fullPath: '/returpolicy'
+      preLoaderRoute: typeof ReturpolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shop': {
@@ -238,9 +318,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CheckoutRoute: CheckoutRoute,
+  FaqRoute: FaqRoute,
+  IntegritetspolicyRoute: IntegritetspolicyRoute,
   KontaktRoute: KontaktRoute,
+  KopvillkorRoute: KopvillkorRoute,
   OmOssRoute: OmOssRoute,
   RestaureringRoute: RestaureringRoute,
+  ReturpolicyRoute: ReturpolicyRoute,
   ShopRoute: ShopRoute,
   SkickaInSkorRoute: SkickaInSkorRoute,
   VarukorgRoute: VarukorgRoute,
