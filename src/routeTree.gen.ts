@@ -11,7 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as OmOssRouteImport } from './routes/om-oss'
+import { Route as RestaureringRouteImport } from './routes/restaurering'
 import { Route as ShopRouteImport } from './routes/shop'
+import { Route as SkickaInSkorRouteImport } from './routes/skicka-in-skor'
 import { Route as VarukorgRouteImport } from './routes/varukorg'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ProduktIdRouteImport } from './routes/produkt.$id'
@@ -26,9 +30,29 @@ const CheckoutRoute = CheckoutRouteImport.update({
   path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OmOssRoute = OmOssRouteImport.update({
+  id: '/om-oss',
+  path: '/om-oss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RestaureringRoute = RestaureringRouteImport.update({
+  id: '/restaurering',
+  path: '/restaurering',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SkickaInSkorRoute = SkickaInSkorRouteImport.update({
+  id: '/skicka-in-skor',
+  path: '/skicka-in-skor',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VarukorgRoute = VarukorgRouteImport.update({
@@ -50,7 +74,11 @@ const ProduktIdRoute = ProduktIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/kontakt': typeof KontaktRoute
+  '/om-oss': typeof OmOssRoute
+  '/restaurering': typeof RestaureringRoute
   '/shop': typeof ShopRoute
+  '/skicka-in-skor': typeof SkickaInSkorRoute
   '/varukorg': typeof VarukorgRoute
   '/api/chat': typeof ApiChatRoute
   '/produkt/$id': typeof ProduktIdRoute
@@ -58,7 +86,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/kontakt': typeof KontaktRoute
+  '/om-oss': typeof OmOssRoute
+  '/restaurering': typeof RestaureringRoute
   '/shop': typeof ShopRoute
+  '/skicka-in-skor': typeof SkickaInSkorRoute
   '/varukorg': typeof VarukorgRoute
   '/api/chat': typeof ApiChatRoute
   '/produkt/$id': typeof ProduktIdRoute
@@ -67,7 +99,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/kontakt': typeof KontaktRoute
+  '/om-oss': typeof OmOssRoute
+  '/restaurering': typeof RestaureringRoute
   '/shop': typeof ShopRoute
+  '/skicka-in-skor': typeof SkickaInSkorRoute
   '/varukorg': typeof VarukorgRoute
   '/api/chat': typeof ApiChatRoute
   '/produkt/$id': typeof ProduktIdRoute
@@ -75,14 +111,37 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/checkout' | '/shop' | '/varukorg' | '/api/chat' | '/produkt/$id'
+    | '/'
+    | '/checkout'
+    | '/kontakt'
+    | '/om-oss'
+    | '/restaurering'
+    | '/shop'
+    | '/skicka-in-skor'
+    | '/varukorg'
+    | '/api/chat'
+    | '/produkt/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/checkout' | '/shop' | '/varukorg' | '/api/chat' | '/produkt/$id'
+  to:
+    | '/'
+    | '/checkout'
+    | '/kontakt'
+    | '/om-oss'
+    | '/restaurering'
+    | '/shop'
+    | '/skicka-in-skor'
+    | '/varukorg'
+    | '/api/chat'
+    | '/produkt/$id'
   id:
     | '__root__'
     | '/'
     | '/checkout'
+    | '/kontakt'
+    | '/om-oss'
+    | '/restaurering'
     | '/shop'
+    | '/skicka-in-skor'
     | '/varukorg'
     | '/api/chat'
     | '/produkt/$id'
@@ -91,7 +150,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CheckoutRoute: typeof CheckoutRoute
+  KontaktRoute: typeof KontaktRoute
+  OmOssRoute: typeof OmOssRoute
+  RestaureringRoute: typeof RestaureringRoute
   ShopRoute: typeof ShopRoute
+  SkickaInSkorRoute: typeof SkickaInSkorRoute
   VarukorgRoute: typeof VarukorgRoute
   ApiChatRoute: typeof ApiChatRoute
   ProduktIdRoute: typeof ProduktIdRoute
@@ -113,11 +176,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/om-oss': {
+      id: '/om-oss'
+      path: '/om-oss'
+      fullPath: '/om-oss'
+      preLoaderRoute: typeof OmOssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/restaurering': {
+      id: '/restaurering'
+      path: '/restaurering'
+      fullPath: '/restaurering'
+      preLoaderRoute: typeof RestaureringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop': {
       id: '/shop'
       path: '/shop'
       fullPath: '/shop'
       preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skicka-in-skor': {
+      id: '/skicka-in-skor'
+      path: '/skicka-in-skor'
+      fullPath: '/skicka-in-skor'
+      preLoaderRoute: typeof SkickaInSkorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/varukorg': {
@@ -147,7 +238,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CheckoutRoute: CheckoutRoute,
+  KontaktRoute: KontaktRoute,
+  OmOssRoute: OmOssRoute,
+  RestaureringRoute: RestaureringRoute,
   ShopRoute: ShopRoute,
+  SkickaInSkorRoute: SkickaInSkorRoute,
   VarukorgRoute: VarukorgRoute,
   ApiChatRoute: ApiChatRoute,
   ProduktIdRoute: ProduktIdRoute,
