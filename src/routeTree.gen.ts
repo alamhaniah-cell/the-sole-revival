@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as IntegritetspolicyRouteImport } from './routes/integritetspolicy'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as KopvillkorRouteImport } from './routes/kopvillkor'
+import { Route as OmOssRouteImport } from './routes/om-oss'
+import { Route as RestaureringRouteImport } from './routes/restaurering'
+import { Route as ReturpolicyRouteImport } from './routes/returpolicy'
+import { Route as ShopRouteImport } from './routes/shop'
+import { Route as SkickaInSkorRouteImport } from './routes/skicka-in-skor'
+import { Route as VarukorgRouteImport } from './routes/varukorg'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as ProduktIdRouteImport } from './routes/produkt.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IntegritetspolicyRoute = IntegritetspolicyRouteImport.update({
+  id: '/integritetspolicy',
+  path: '/integritetspolicy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KopvillkorRoute = KopvillkorRouteImport.update({
+  id: '/kopvillkor',
+  path: '/kopvillkor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OmOssRoute = OmOssRouteImport.update({
+  id: '/om-oss',
+  path: '/om-oss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RestaureringRoute = RestaureringRouteImport.update({
+  id: '/restaurering',
+  path: '/restaurering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReturpolicyRoute = ReturpolicyRouteImport.update({
+  id: '/returpolicy',
+  path: '/returpolicy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SkickaInSkorRoute = SkickaInSkorRouteImport.update({
+  id: '/skicka-in-skor',
+  path: '/skicka-in-skor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VarukorgRoute = VarukorgRouteImport.update({
+  id: '/varukorg',
+  path: '/varukorg',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProduktIdRoute = ProduktIdRouteImport.update({
+  id: '/produkt/$id',
+  path: '/produkt/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/faq': typeof FaqRoute
+  '/integritetspolicy': typeof IntegritetspolicyRoute
+  '/kontakt': typeof KontaktRoute
+  '/kopvillkor': typeof KopvillkorRoute
+  '/om-oss': typeof OmOssRoute
+  '/restaurering': typeof RestaureringRoute
+  '/returpolicy': typeof ReturpolicyRoute
+  '/shop': typeof ShopRoute
+  '/skicka-in-skor': typeof SkickaInSkorRoute
+  '/varukorg': typeof VarukorgRoute
+  '/api/chat': typeof ApiChatRoute
+  '/produkt/$id': typeof ProduktIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/faq': typeof FaqRoute
+  '/integritetspolicy': typeof IntegritetspolicyRoute
+  '/kontakt': typeof KontaktRoute
+  '/kopvillkor': typeof KopvillkorRoute
+  '/om-oss': typeof OmOssRoute
+  '/restaurering': typeof RestaureringRoute
+  '/returpolicy': typeof ReturpolicyRoute
+  '/shop': typeof ShopRoute
+  '/skicka-in-skor': typeof SkickaInSkorRoute
+  '/varukorg': typeof VarukorgRoute
+  '/api/chat': typeof ApiChatRoute
+  '/produkt/$id': typeof ProduktIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/faq': typeof FaqRoute
+  '/integritetspolicy': typeof IntegritetspolicyRoute
+  '/kontakt': typeof KontaktRoute
+  '/kopvillkor': typeof KopvillkorRoute
+  '/om-oss': typeof OmOssRoute
+  '/restaurering': typeof RestaureringRoute
+  '/returpolicy': typeof ReturpolicyRoute
+  '/shop': typeof ShopRoute
+  '/skicka-in-skor': typeof SkickaInSkorRoute
+  '/varukorg': typeof VarukorgRoute
+  '/api/chat': typeof ApiChatRoute
+  '/produkt/$id': typeof ProduktIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/checkout'
+    | '/faq'
+    | '/integritetspolicy'
+    | '/kontakt'
+    | '/kopvillkor'
+    | '/om-oss'
+    | '/restaurering'
+    | '/returpolicy'
+    | '/shop'
+    | '/skicka-in-skor'
+    | '/varukorg'
+    | '/api/chat'
+    | '/produkt/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/checkout'
+    | '/faq'
+    | '/integritetspolicy'
+    | '/kontakt'
+    | '/kopvillkor'
+    | '/om-oss'
+    | '/restaurering'
+    | '/returpolicy'
+    | '/shop'
+    | '/skicka-in-skor'
+    | '/varukorg'
+    | '/api/chat'
+    | '/produkt/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/checkout'
+    | '/faq'
+    | '/integritetspolicy'
+    | '/kontakt'
+    | '/kopvillkor'
+    | '/om-oss'
+    | '/restaurering'
+    | '/returpolicy'
+    | '/shop'
+    | '/skicka-in-skor'
+    | '/varukorg'
+    | '/api/chat'
+    | '/produkt/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CheckoutRoute: typeof CheckoutRoute
+  FaqRoute: typeof FaqRoute
+  IntegritetspolicyRoute: typeof IntegritetspolicyRoute
+  KontaktRoute: typeof KontaktRoute
+  KopvillkorRoute: typeof KopvillkorRoute
+  OmOssRoute: typeof OmOssRoute
+  RestaureringRoute: typeof RestaureringRoute
+  ReturpolicyRoute: typeof ReturpolicyRoute
+  ShopRoute: typeof ShopRoute
+  SkickaInSkorRoute: typeof SkickaInSkorRoute
+  VarukorgRoute: typeof VarukorgRoute
+  ApiChatRoute: typeof ApiChatRoute
+  ProduktIdRoute: typeof ProduktIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/integritetspolicy': {
+      id: '/integritetspolicy'
+      path: '/integritetspolicy'
+      fullPath: '/integritetspolicy'
+      preLoaderRoute: typeof IntegritetspolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kopvillkor': {
+      id: '/kopvillkor'
+      path: '/kopvillkor'
+      fullPath: '/kopvillkor'
+      preLoaderRoute: typeof KopvillkorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/om-oss': {
+      id: '/om-oss'
+      path: '/om-oss'
+      fullPath: '/om-oss'
+      preLoaderRoute: typeof OmOssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/restaurering': {
+      id: '/restaurering'
+      path: '/restaurering'
+      fullPath: '/restaurering'
+      preLoaderRoute: typeof RestaureringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/returpolicy': {
+      id: '/returpolicy'
+      path: '/returpolicy'
+      fullPath: '/returpolicy'
+      preLoaderRoute: typeof ReturpolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skicka-in-skor': {
+      id: '/skicka-in-skor'
+      path: '/skicka-in-skor'
+      fullPath: '/skicka-in-skor'
+      preLoaderRoute: typeof SkickaInSkorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/varukorg': {
+      id: '/varukorg'
+      path: '/varukorg'
+      fullPath: '/varukorg'
+      preLoaderRoute: typeof VarukorgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produkt/$id': {
+      id: '/produkt/$id'
+      path: '/produkt/$id'
+      fullPath: '/produkt/$id'
+      preLoaderRoute: typeof ProduktIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CheckoutRoute: CheckoutRoute,
+  FaqRoute: FaqRoute,
+  IntegritetspolicyRoute: IntegritetspolicyRoute,
+  KontaktRoute: KontaktRoute,
+  KopvillkorRoute: KopvillkorRoute,
+  OmOssRoute: OmOssRoute,
+  RestaureringRoute: RestaureringRoute,
+  ReturpolicyRoute: ReturpolicyRoute,
+  ShopRoute: ShopRoute,
+  SkickaInSkorRoute: SkickaInSkorRoute,
+  VarukorgRoute: VarukorgRoute,
+  ApiChatRoute: ApiChatRoute,
+  ProduktIdRoute: ProduktIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
